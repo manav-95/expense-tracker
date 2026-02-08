@@ -15,13 +15,13 @@ dotenv.config()
 connectDB();
 
 app.use(
-    cors({
-        origin: [
-            "https://bond-and-budgets.netlify.app",
-            "http://localhost:5173",
-        ],
-       
-    })
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://bond-and-budgets.netlify.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
 );
 
 
