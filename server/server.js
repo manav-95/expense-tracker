@@ -14,10 +14,20 @@ dotenv.config()
 
 connectDB();
 
-app.use(cors({
-    origin: ["https://bond-and-budgets.netlify.app/", "http://localhost:5173", "http://localhost:8080"],
-    credentials: true,
-}))
+import cors from "cors";
+
+app.use(
+    cors({
+        origin: [
+            "https://bond-and-budgets.netlify.app",
+            "http://localhost:5173",
+            "http://localhost:8080",
+        ],
+        credentials: true,
+    })
+);
+
+
 app.use(express.json())
 app.use(cookieParser())
 
