@@ -15,7 +15,7 @@ dotenv.config()
 connectDB();
 
 app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:8080", "https://bond-and-budgets.netlify.app"],
+    origin: ["https://bond-and-budgets.netlify.app/", "http://localhost:5173", "http://localhost:8080"],
     credentials: true,
 }))
 app.use(express.json())
