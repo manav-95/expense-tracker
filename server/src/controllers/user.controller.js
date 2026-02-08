@@ -52,12 +52,12 @@ export const loginUser = async (req, res) => {
         user.refreshToken = refreshToken
         await user.save()
 
-        res.cookie("refreshToken", refreshToken, {
-            httpOnly: true,
-            secure: true, // true in production "HTTPS"
-            sameSite: "lax",
-            maxAge: 7 * 24 * 60 * 60 * 1000
-        })
+        // res.cookie("refreshToken", refreshToken, {
+        //     httpOnly: true,
+        //     secure: true, // true in production "HTTPS"
+        //     sameSite: "lax",
+        //     maxAge: 7 * 24 * 60 * 60 * 1000
+        // })
 
         return res.status(200).json({ success: true, message: "User LoggedIn Successfully", accessToken, user })
     } catch (error) {
